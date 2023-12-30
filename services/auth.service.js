@@ -2,11 +2,9 @@ const { db } = require('../utils/db-mongo.util');
 const ErrorResponse = require("../utils/errorResponse.util");
 const httpConfig = require("../configs/http.config");
 const jwtUtil = require('./../utils/jwt.util');
-const comfun = require('../utils/common.util');
 const bcrypt = require('bcryptjs');
 
 const emailPattern = /^([a-zA-Z0-9._-]+)@([a-zA-Z0-9.-]+)\.([a-zA-Z]{2,6})$/;
-const phonePattern = /^\d{11}$/;
 const DEFAULT_SALT_ROUNDS = 10;
 
 let self;
@@ -70,6 +68,8 @@ AuthService.prototype = {
                 if (await bcrypt.compare(body.password, admin.password))
                 {
                     let token = await self.jwt.generateToken({ id: admin._id });
+                    admin.logged_out_at = null;
+                    admin.save();
                     resolve({
                         id: admin._id,
                         username: admin.name,

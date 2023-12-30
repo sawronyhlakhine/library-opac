@@ -3,13 +3,9 @@ const Schema = mongoose.Schema;
 
 const BookRentSchema = new Schema(
     {
-        book_code: {
-            type: Schema.Types.String,
-            required: true
-        },
-        book_id: {
+        copy_id: {
             type: Schema.Types.ObjectId,
-            ref: "books",
+            ref: "book_copies",
         },
         user_id: {
             type: Schema.Types.ObjectId,

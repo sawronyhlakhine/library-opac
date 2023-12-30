@@ -1,7 +1,8 @@
 const mongoose = require('mongoose');
+const mongoosePaginate = require('mongoose-paginate-v2');
 const Schema = mongoose.Schema;
 
-const UserSchema = new Schema(
+const StudentSchema = new Schema(
     {
         name: {
             type: Schema.Types.String,
@@ -30,5 +31,6 @@ const UserSchema = new Schema(
     }
 );
 
-let User = mongoose.model("users", UserSchema);
-module.exports = User;
+StudentSchema.plugin(mongoosePaginate);
+let Student = mongoose.model("students", StudentSchema);
+module.exports = Student;

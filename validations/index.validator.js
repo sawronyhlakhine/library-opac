@@ -8,9 +8,7 @@ module.exports = {
 
         const errors = validationResult(req);
     
-        if (errors.isEmpty()) {
-            return next();
-        }
+        if (errors.isEmpty()) return next();
     
         const extractedErrors = []
         errors.array().map(err => extractedErrors.push(err.msg))
@@ -20,15 +18,5 @@ module.exports = {
         const error = new ErrorResponse(uniqueErrors.join(","), 400, httpConfig.bad_request);
         res.status(400);
         next(error);
-
-        // return res.status(200).json({
-        //     status: 400,
-        //     message: null,
-        //     data: null,
-        //     error: {
-        //         errCode: 404,
-        //         messages : uniqueErrors.join(",")
-        //     }
-        // });
     }
 }
