@@ -11,6 +11,7 @@ const StudentSchema = new Schema(
         },
         phone: {
             type: Schema.Types.String,
+            required: false,
             defaults: null
         },
         email: {

@@ -19,7 +19,18 @@ AuthorService.prototype = {
                     limit: PAGE_LIMIT,
                     sort: '-updated_at'
                 };
-
+            // let authors = await db.Author.aggregate([
+            //     { $match: { name: { $regex: `.*${query.keyword}.*`} } },
+            //     {
+            //         $project: {
+            //             _id: '$_id',
+            //             name: '$name',
+            //         }
+            //     },
+            //     {
+            //         $sort: {_id: 1}
+            //     }
+            // ]);
             let authorsPaging = await db.Author.paginate({}, pageOption);
             resolve({
                 authors: authorsPaging.docs,

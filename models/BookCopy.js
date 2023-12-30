@@ -5,7 +5,7 @@ const BookCopySchema = new Schema(
     {
         book_id: {
             type: Schema.Types.ObjectId,
-            ref: "categories",
+            ref: "books",
         },
         book_code: {
             type: Schema.Types.String,

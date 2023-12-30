@@ -17,7 +17,7 @@ const getDetails = (req, res, next) => {
 const borrowedBooks = (req, res, next) => {
     studentService
         .borrowedBooks(req)
-        .then(response => formatResponse.api(res, 0, 'Author Store successful.', true, response))
+        .then(response => formatResponse.api(res, 0, 'Retrieve Student Borrowed Books Successful', true, response))
         .catch(err => next(err));
 }
 

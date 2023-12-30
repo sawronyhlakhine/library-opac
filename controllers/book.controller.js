@@ -1,35 +1,47 @@
-const CategoryService = require('../services/category.service');
-const categoryService = new CategoryService();
+const BookService = require('../services/book.service');
+const bookService = new BookService();
 const formatResponse = require('../utils/formatResponse.util');
 
 const getAll = (req, res, next) => {
-    categoryService
+    bookService
         .getAll(req)
-        .then(response => formatResponse.api(res, 0, 'Retrieve Categories Successful.', true, response))
+        .then(response => formatResponse.api(res, 0, 'Retrieve Book Records Successful.', true, response))
         .catch(err => next(err));
 }
 const getDetails = (req, res, next) => {
-    categoryService
+    bookService
         .getDetails(req)
-        .then(response => formatResponse.api(res, 0, 'Retrieve Category Details successful.', true, response))
+        .then(response => formatResponse.api(res, 0, 'Retrieve Book Record Details successful.', true, response))
         .catch(err => next(err));
 }
 const store = (req, res, next) => {
-    categoryService
+    bookService
         .store(req)
-        .then(response => formatResponse.api(res, 0, 'Category Store successful.', true, response))
+        .then(response => formatResponse.api(res, 0, 'Book Record Store successful.', true, response))
         .catch(err => next(err));
 }
 const update = (req, res, next) => {
-    categoryService
+    bookService
         .update(req)
-        .then(response => formatResponse.api(res, 0, 'Category Updated successful.', true, response))
+        .then(response => formatResponse.api(res, 0, 'Book Record Updated successful.', true, response))
         .catch(err => next(err));
 }
 const remove = (req, res, next) => {
-    categoryService
+    bookService
         .remove(req)
-        .then(response => formatResponse.api(res, 0, 'Category Remove successful.', true, response))
+        .then(response => formatResponse.api(res, 0, 'Book Record Remove successful.', true, response))
+        .catch(err => next(err));
+}
+const addCopy = (req, res, next) => {
+    bookService
+        .addCopy(req)
+        .then(response => formatResponse.api(res, 0, 'Book Record Copy Added successful.', true, response))
+        .catch(err => next(err));
+}
+const returnBook = (req, res, next) => {
+    bookService
+        .returnBook(req)
+        .then(response => formatResponse.api(res, 0, 'Book Record Updated successful.', true, response))
         .catch(err => next(err));
 }
 
@@ -39,5 +51,7 @@ module.exports = {
     getDetails,
     store,
     update,
-    remove
+    remove,
+    addCopy,
+    returnBook
 }

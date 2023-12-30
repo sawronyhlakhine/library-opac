@@ -9,11 +9,13 @@ let rateLimitMiddleware = require('../middlewares/rateLimit.middleware');
 let validator = require('../validations/index.validator'),
     authorValidator = require('../validations/author.validator'),
     categoryValidator = require('../validations/category.validator'),
-    studentValidator = require('../validations/student.validator');
+    studentValidator = require('../validations/student.validator'),
+    bookValidator = require('../validations/book.validator');
 
 let authorController = require('./../controllers/author.controller'),
     categoryController = require('../controllers/category.controller'),
-    studentController = require('../controllers/student.controller')
+    studentController = require('../controllers/student.controller'),
+    bookController = require('../controllers/book.controller');
 
 let commonMiddlewares = [
     validator.validate,
@@ -52,14 +54,14 @@ router.delete( PREFIX + '/category/:id', categoryValidator.deleteRules(), common
 // -----------------------------
 // BOOK ACCESS
 // -----------------------------
-router.get( PREFIX + '/book', commonMiddlewares, categoryController.getAll);
-router.get( PREFIX + '/book/:id', categoryValidator.detailsRules(), commonMiddlewares, categoryController.getDetails);
-router.post( PREFIX + '/book', categoryValidator.createRules(), commonMiddlewares, categoryController.store);
-router.put( PREFIX + '/book/:id', categoryValidator.updateRules(), commonMiddlewares, categoryController.update);
-router.delete( PREFIX + '/book/:id', categoryValidator.deleteRules(), commonMiddlewares, categoryController.remove);
+router.get( PREFIX + '/book', bookValidator.listRules(), commonMiddlewares, bookController.getAll);
+router.get( PREFIX + '/book/:id', bookValidator.detailsRules(), commonMiddlewares, bookController.getDetails);
+router.post( PREFIX + '/book', bookValidator.createRules(), commonMiddlewares, bookController.store);
+router.put( PREFIX + '/book/:id', bookValidator.updateRules(), commonMiddlewares, bookController.update);
+router.delete( PREFIX + '/book/:id', bookValidator.deleteRules(), commonMiddlewares, bookController.remove);
 
-router.put( PREFIX + '/book/:id/return', categoryValidator.updateRules(), commonMiddlewares, categoryController.update);
-router.post( PREFIX + '/book/:id/add-copy', categoryValidator.updateRules(), commonMiddlewares, categoryController.update);
+router.post( PREFIX + '/book/:id/add-copy', bookValidator.addCopyRules(), commonMiddlewares, bookController.addCopy);
+router.put( PREFIX + '/book/:id/return', bookValidator.returnRules(), commonMiddlewares, bookController.returnBook);
 
 // -----------------------------
 // STUDENT ACCESS

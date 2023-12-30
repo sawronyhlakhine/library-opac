@@ -19,6 +19,7 @@ const BookSchema = new Schema(
         author_id: {
             type: Schema.Types.ObjectId,
             required: true,
+            ref: "authors"
         },
         edition: {
             type: Schema.Types.Number,

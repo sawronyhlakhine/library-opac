@@ -19,7 +19,20 @@ StudentService.prototype = {
                     limit: PAGE_LIMIT,
                     sort: '-updated_at'
                 };
-
+            // let student =  await db.Student.aggregate([
+            //     { $match: {_id: studentId} },
+            //     {
+            //         $project: {
+            //             _id: '$_id',
+            //             name: '$name',
+            //             phone: '$phone',
+            //             email: '$email'
+            //         }
+            //     },
+            //     {
+            //         $sort: {_id: 1}
+            //     }
+            // ]);
             let studentsPaging = await db.Student.paginate({}, pageOption);
             resolve({
                 students: studentsPaging.docs,
@@ -57,15 +70,16 @@ StudentService.prototype = {
                 let student = await db.Student.findOne({_id: params.id}, {__v: 0});
                 if (student) 
                 {
-                    let borrowedBooks = await db.BookRent.find({student_id: student._id}, {_id: 1 }),
+                    let borrowedBooks = await db.BookRent.find({student_id: student._id}, {copy_id: 1 }),
                         copyIds = [],
                         resultData = [];
 
                     copyIds = await borrowedBooks.map(borrowBook => borrowBook.copy_id);
-
+                    
                     let bookCopies = await db.BookCopy.find({ _id: { $in: copyIds }}).populate('book_id');
-                    for (let bookCopy in bookCopies)
+                    for (let i=0; i < bookCopies.length; i++)
                     {
+                        const bookCopy = bookCopies[i];
                         if (bookCopy.book_id)
                             resultData.push({
                                 _id: bookCopy.book_id._id,
@@ -78,7 +92,7 @@ StudentService.prototype = {
                     }
                     resolve({ 
                         _id: student._id,
-                        name: student.name,
+                        student_name: student.name,
                         borrowed_books: resultData
                     });
                 }

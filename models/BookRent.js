@@ -7,19 +7,20 @@ const BookRentSchema = new Schema(
             type: Schema.Types.ObjectId,
             ref: "book_copies",
         },
-        user_id: {
+        student_id: {
             type: Schema.Types.ObjectId,
-            ref: "users",
+            ref: "students",
         },
         rent_days: {
             type: Schema.Types.Number,
-            default: 0
+            defaults: 0
         },
         start_at: {
             type: Schema.Types.Date
         },
         end_at: {
-            type: Schema.Types.Date
+            type: Schema.Types.Date,
+            defaults: null,
         },
         amount: {
             type: Schema.Types.Number

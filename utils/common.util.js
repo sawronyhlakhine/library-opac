@@ -113,109 +113,10 @@ module.exports.urlEncode = function (text) {
 		});
 }
 
-
-module.exports.toSqlDate = function (dateVal, fromFormat) {
-	if (typeof fromFormat != 'string' || fromFormat == '') 
-	{
-		fromFormat = 'DD/MM/YYYY';
-	}
-
-	var dateObj = new Date();
-	if (dateVal == null || !dateVal || dateVal == '') return "";
-
-	if (typeof dateVal === 'string')
-	{
-		dateObj = date.parse(dateVal, fromFormat);
-		if (isNaN(dateObj)) 
-		{
-			console.log("IS NaN : ", dateObj);
-			dateObj = new Date(dateVal);
-		}
-	} 
-	else if (typeof dateVal === 'object' && typeof dateVal.getTime === 'function') dateObj = new Date(dateVal.getTime());
-
-	if (dateObj && typeof dateObj.getTime === 'function') return date.format(dateObj, 'YYYY-MM-DD');
-
-	return "";
-}
-
-module.exports.toSqlDateTime = function (dateVal, fromFormat) {
-	if (typeof fromFormat != 'string' || fromFormat == '') fromFormat = 'DD/MM/YYYY';
-
-	var dateObj = new Date();
-	if (dateVal == null || !dateVal || dateVal == '') return "";
-	if (typeof dateVal === 'string') 
-	{
-		dateObj = date.parse(dateVal, fromFormat);
-		if (isNaN(dateObj)) dateObj = new Date(dateVal);
-
-	} 
-	else if (typeof dateVal === 'object' && typeof dateVal.getTime === 'function') dateObj = new Date(dateVal.getTime());
-
-	if (dateObj && typeof dateObj.getTime === 'function') 
-		return date.format(dateObj, 'YYYY-MM-DD HH:mm:ss');
-
-	return "";
-}
-
-module.exports.toSqlTime = function (dateVal, fromFormat) {
-	if (typeof fromFormat != 'string' || fromFormat == '') fromFormat = 'HH:mm:ss';
-
-	var dateObj = new Date();
-	if (dateVal == null || !dateVal || dateVal == '') return "";
-
-	if (typeof dateVal === 'string') 
-	{
-		dateObj = date.parse(dateVal, fromFormat);
-		if (isNaN(dateObj)) dateObj = new Date(dateVal);
-	} 
-	else if (typeof dateVal === 'object' && typeof dateVal.getTime === 'function') dateObj = new Date(dateVal.getTime());
-
-	if (dateObj && typeof dateObj.getTime === 'function') 
-		return date.format(dateObj, 'HH:mm:ss');
-
-	return "";
-}
-
-module.exports.toDisplayDate = function (dateVal, fromFormat) {
-	if (typeof format != 'string' || format == '') format = 'DD/MM/YYYY';
-	if (dateVal == null || !dateVal || dateVal == '') return "";
-
-	var dateObj = new Date();
-	if (typeof dateVal === 'string' && dateVal != '') 
-	{
-		var fromFormat = 'YYYY-MM-DD';
-		if (dateVal.length > 10) fromFormat = 'YYYY-MM-DD HH:mm:ss';
-
-		dateObj = date.parse(dateVal, fromFormat);
-	} 
-	else if (typeof dateVal === 'object' && typeof dateVal.getTime === 'function') dateObj = new Date(dateVal.getTime());
-
-	if (dateObj && typeof dateObj.getTime === 'function') return date.format(dateObj, format);
-
-	return "";
-}
-
-module.exports.toDisplayDateTime = function (dateVal, fromFormat) {
-	if (typeof format != 'string' || format == '') format = 'DD/MM/YYYY HH:mm:ss';
-	if (dateVal == null || !dateVal || dateVal == '') return "";
-
-	var dateObj = new Date();
-	if (typeof dateVal === 'string' && dateVal != '')
-	{
-		var fromFormat = 'YYYY-MM-DD';
-		if (dateVal.length > 10) fromFormat = 'YYYY-MM-DD HH:mm:ss';
-		dateObj = date.parse(dateVal, fromFormat);
-	} 
-	else if (typeof dateVal === 'object' && typeof dateVal.getTime === 'function') dateObj = new Date(dateVal.getTime());
-
-	if (dateObj && typeof dateObj.getTime === 'function') return date.format(dateObj, format);
-	return "";
-}
-
 //random code
 module.exports.generateRandomCode = (length) => {
     const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+    // const characters = '0123456789';
     let result = '';
     length || (length = 16);
     for (let i = 0; i < length; i++ ) 
@@ -229,14 +130,4 @@ module.exports.generateRandomCode = (length) => {
 module.exports.zFill = function(num, len) {
 	var str = '' + Array(len).join("0") + num;
 	return str.slice(-Math.max(('' + num).length, len));
-}
-
-module.exports.slugMe = (stringValue) => {
-	let stringArr = stringValue.split(" "),
-		slugValue = "";
-	for (let i = 0; i < stringArr.length; i++)
-	{
-		slugValue += stringArr[i].slice(0,1).toLowerCase();
-	}
-    return slugValue;
 }
