@@ -1,6 +1,7 @@
 let express = require('express');
 let router = express.Router();
 const PREFIX = '/api/v1';
+const crypto = require('./../utils/crypto.util');
 
 let asyncHandler = require('../middlewares/asyncHandler.middleware');
 let authMiddleware = require('../middlewares/auth.middleware');
@@ -32,7 +33,18 @@ router.get(PREFIX + '/checkService', (req, res, next) => {
         error: null
     });
 });
-
+router.post(PREFIX + '/aes-decrypt', (req, res, next) => {
+    let body = req.body;
+    res.status(200).json({
+        statusCode: 0,
+        isSuccess: true,
+        message: "Success",
+        data: {
+            token: body.data ? crypto.decryptMessage(body.data) : ""
+        },
+        error: null
+    });
+});
 // -----------------------------
 // AUTHOR ACCESS
 // -----------------------------

@@ -26,4 +26,8 @@ module.exports = {
         HTTP_STATUS_CODE: 200
     },
     PAGE_LIMIT: 10,
+    AES_ENCRYPT: {
+        IV: process.env.IV || '1#345as887io%32@',
+        ENC_KEY: process.env.ENC_KEY || 'ABCDEF12!ER&456EA*CDEF1&3ERD45@#',
+    }
 }

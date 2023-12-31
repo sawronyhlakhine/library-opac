@@ -1,0 +1,3813 @@
+{
+	"info": {
+		"_postman_id": "a9fac5e6-c350-4f85-912d-5b2870d2da85",
+		"name": "Library-OPAC-Admin-APIs",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "2162172",
+		"_collection_link": "https://cloudy-eclipse-943572.postman.co/workspace/AkoneyaApp~fee3b21f-3a05-4774-aa08-50aa9673d0d0/collection/2162172-a9fac5e6-c350-4f85-912d-5b2870d2da85?action=share&source=collection_link&creator=2162172"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\": \"Admin2\",\n    \"email\": \"admin2@gmail.com\",\n    \"password\": \"123456\",\n    \"confirmPassword\": \"123456\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/auth/register",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"auth",
+								"register"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"username\": \"Admin2\",\n    \"email\": \"admin2@gmail.com\",\n    \"password\": \"123456\",\n    \"confirmPassword\": \"123456\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/auth/register",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"auth",
+										"register"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "Origin, X-Requested-With, Content-Type, Accept, Authorization"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "58"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 30 Dec 2023 04:03:11 GMT"
+								},
+								{
+									"key": "X-RateLimit-Reset",
+									"value": "1703909000"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "153"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"99-OpQX+CbtcD8m1Doak1pHx8ysDhY\""
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 0,\n    \"isSuccess\": true,\n    \"message\": \"Admin Register Successful.\",\n    \"data\": {\n        \"_id\": \"658f967f52e131ba9c116718\",\n        \"name\": \"admin2@gmail.com\"\n    },\n    \"error\": null\n}"
+						},
+						{
+							"name": "Already Exist",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"username\": \"Admin\",\n    \"email\": \"admin@gmail.com\",\n    \"password\": \"123456\",\n    \"confirmPassword\": \"123456\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/auth/register",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"auth",
+										"register"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "Origin, X-Requested-With, Content-Type, Accept, Authorization"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 30 Dec 2023 04:02:19 GMT"
+								},
+								{
+									"key": "X-RateLimit-Reset",
+									"value": "1703909000"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "142"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"8e-XiLryc5XclDy/SBUzdZ3qsIpbVE\""
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 210,\n    \"isSuccess\": false,\n    \"message\": \"User Already Exist.\",\n    \"data\": null,\n    \"error\": {\n        \"code\": \"400210\",\n        \"body\": [\n            \"Email was already exist.\"\n        ]\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"admin@gmail.com\",\n    \"password\": \"123456\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/auth/login",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"email\": \"admin@gmail.com\",\n    \"password\": \"123456\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/auth/login",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"auth",
+										"login"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "Origin, X-Requested-With, Content-Type, Accept, Authorization"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 30 Dec 2023 04:06:09 GMT"
+								},
+								{
+									"key": "X-RateLimit-Reset",
+									"value": "1703909230"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "371"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"173-mLC2iLdM1or4UB6qFtrW0V1Lmpw\""
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 0,\n    \"isSuccess\": true,\n    \"message\": \"Login successful.\",\n    \"data\": {\n        \"id\": \"658f9624e6bcc3f53be37fcd\",\n        \"email\": \"admin@gmail.com\",\n        \"accessToken\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1OGY5NjI0ZTZiY2MzZjUzYmUzN2ZjZCIsImlhdCI6MTcwMzkwOTE3MCwiZXhwIjoxNzAzOTk1NTcwLCJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjQwMDAifQ.u3wvANXyA-P_9-m-h3NpyXyGPSn57VxRmXzFPiSxF7I\"\n    },\n    \"error\": null\n}"
+						},
+						{
+							"name": "Failed",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"email\": \"admin@gmail.com\",\n    \"password\": \"123446\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/auth/login",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"auth",
+										"login"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "Origin, X-Requested-With, Content-Type, Accept, Authorization"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "58"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 30 Dec 2023 04:06:59 GMT"
+								},
+								{
+									"key": "X-RateLimit-Reset",
+									"value": "1703909230"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "136"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"88-Mb91A/KrY0t2td9KIaLTvs/1yhM\""
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 110,\n    \"isSuccess\": false,\n    \"message\": \"Login Failed\",\n    \"data\": null,\n    \"error\": {\n        \"code\": \"400110\",\n        \"body\": [\n            \"Invalid Email Or Password\"\n        ]\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Logout",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/auth/logout",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"auth",
+								"logout"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/auth/logout",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"auth",
+										"logout"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "nginx/1.18.0 (Ubuntu)"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 23 Oct 2023 04:50:48 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "89"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "Origin, X-Requested-With, Content-Type, Accept, Authorization"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"59-bWKczJtM3m60F1gYNExO5Cyc4cU\""
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 0,\n    \"isSuccess\": true,\n    \"message\": \"Logout successful.\",\n    \"data\": true,\n    \"error\": null\n}"
+						},
+						{
+							"name": "Token Not Found",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/auth/logout",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"auth",
+										"logout"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "nginx/1.18.0 (Ubuntu)"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 23 Oct 2023 03:13:21 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "161"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "Origin, X-Requested-With, Content-Type, Accept, Authorization"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"a1-doHiYv8M6BF7XfzwKjoRbGVOdu0\""
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 160,\n    \"isSuccess\": false,\n    \"message\": \"Access Token Not Found\",\n    \"data\": null,\n    \"errors\": {\n        \"code\": \"401160\",\n        \"body\": [\n            \"Token not found in your request header.\"\n        ]\n    }\n}"
+						},
+						{
+							"name": "User Not Found",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/auth/logout",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"auth",
+										"logout"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "nginx/1.18.0 (Ubuntu)"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 23 Oct 2023 03:25:02 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "132"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "Origin, X-Requested-With, Content-Type, Accept, Authorization"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"84-VNAnyej+VvcEYQu0xsZB4RSl/Po\""
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 130,\n    \"isSuccess\": false,\n    \"message\": \"User Does Not Exist.\",\n    \"data\": null,\n    \"errors\": {\n        \"code\": \"404130\",\n        \"body\": [\n            \"Who Are You?\"\n        ]\n    }\n}"
+						},
+						{
+							"name": "Already Logged Out",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/auth/logout",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"auth",
+										"logout"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "nginx/1.18.0 (Ubuntu)"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 23 Oct 2023 04:20:58 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "147"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "Origin, X-Requested-With, Content-Type, Accept, Authorization"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"93-EPtJzRitO9IAqc9zB85d+EO3FbA\""
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 240,\n    \"isSuccess\": false,\n    \"message\": \"Already Logged Out\",\n    \"data\": null,\n    \"errors\": {\n        \"code\": \"404240\",\n        \"body\": [\n            \"Please Sign-in and try again.\"\n        ]\n    }\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Author Access",
+			"item": [
+				{
+					"name": "Create",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"ပီမိုးနင်း\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/v1/author",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"v1",
+								"author"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Already Exist",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"မိုးရှင်း(I.M.T)\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/v1/author",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"v1",
+										"author"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "Origin, X-Requested-With, Content-Type, Accept, Authorization"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 30 Dec 2023 07:33:43 GMT"
+								},
+								{
+									"key": "X-RateLimit-Reset",
+									"value": "1703921684"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "143"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"8f-T+GkrVii0p3OLwBaz8z68xTkxPs\""
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 210,\n    \"isSuccess\": false,\n    \"message\": \"User Already Exist.\",\n    \"data\": null,\n    \"error\": {\n        \"code\": \"400210\",\n        \"body\": [\n            \"Author was already exist.\"\n        ]\n    }\n}"
+						},
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"ပီမိုးနင်း\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/v1/author",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"v1",
+										"author"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "Origin, X-Requested-With, Content-Type, Accept, Authorization"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 30 Dec 2023 07:34:49 GMT"
+								},
+								{
+									"key": "X-RateLimit-Reset",
+									"value": "1703921750"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "125"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"7d-xTZvWnMc45PoQjYPXrGP/tDl8CM\""
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 0,\n    \"isSuccess\": true,\n    \"message\": \"Author Store successful.\",\n    \"data\": {\n        \"_id\": \"658fc819045dfdd54c93584d\"\n    },\n    \"error\": null\n}"
+						}
+					]
+				},
+				{
+					"name": "List",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/v1/author",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"v1",
+								"author"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "List",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/v1/author",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"v1",
+										"author"
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": "1",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "Origin, X-Requested-With, Content-Type, Accept, Authorization"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "55"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 30 Dec 2023 07:57:46 GMT"
+								},
+								{
+									"key": "X-RateLimit-Reset",
+									"value": "1703923073"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "376"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"178-0z694++y71R8e89xSKbjadHSLUA\""
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 0,\n    \"isSuccess\": true,\n    \"message\": \"Retrieve Authors Successful.\",\n    \"data\": {\n        \"authors\": [\n            {\n                \"_id\": \"658fc819045dfdd54c93584d\",\n                \"name\": \"ပီမိုးနင်း\"\n            },\n            {\n                \"_id\": \"658fc7b4640a040ee8fa7940\",\n                \"name\": \"မိုးရှင်း(I.M.T)\"\n            }\n        ],\n        \"paging\": {\n            \"currentPage\": 1,\n            \"totalPages\": 1,\n            \"hasPrevPage\": false,\n            \"hasNextPage\": false,\n            \"prevPage\": null,\n            \"nextPage\": null\n        }\n    },\n    \"error\": null\n}"
+						}
+					]
+				},
+				{
+					"name": "Details",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/v1/author/658fc7b4640a040ee8fa7940",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"v1",
+								"author",
+								"658fc7b4640a040ee8fa7940"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Not Found",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/v1/author/658fc819045dfdd54c93584e",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"v1",
+										"author",
+										"658fc819045dfdd54c93584e"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "Origin, X-Requested-With, Content-Type, Accept, Authorization"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "57"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 30 Dec 2023 07:57:25 GMT"
+								},
+								{
+									"key": "X-RateLimit-Reset",
+									"value": "1703923073"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "139"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"8b-7FM1wYGMlEn2LJp1I65o4wBmS64\""
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 130,\n    \"isSuccess\": false,\n    \"message\": \"User Does Not Exist.\",\n    \"data\": null,\n    \"error\": {\n        \"code\": \"404130\",\n        \"body\": [\n            \"Author was not found\"\n        ]\n    }\n}"
+						},
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/v1/author/658fc7b4640a040ee8fa7940",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"v1",
+										"author",
+										"658fc7b4640a040ee8fa7940"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "Origin, X-Requested-With, Content-Type, Accept, Authorization"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "56"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 30 Dec 2023 09:28:00 GMT"
+								},
+								{
+									"key": "X-RateLimit-Reset",
+									"value": "1703928523"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "260"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"104-OYQ1w172jGaOQRJ/jscYkGBIJ3o\""
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 0,\n    \"isSuccess\": true,\n    \"message\": \"Retrieve Author Details successful.\",\n    \"data\": {\n        \"_id\": \"658fc7b4640a040ee8fa7940\",\n        \"name\": \"မိုးရှင်း(I.M.T)\",\n        \"created_at\": \"2023-12-30T07:33:08.689Z\",\n        \"updated_at\": \"2023-12-30T07:33:08.689Z\"\n    },\n    \"error\": null\n}"
+						}
+					]
+				},
+				{
+					"name": "Update",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"ဖေမြင့်\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/v1/author/658fc819045dfdd54c93584d",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"v1",
+								"author",
+								"658fc819045dfdd54c93584d"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"ဖေမြင့်\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/v1/author/658fc819045dfdd54c93584d",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"v1",
+										"author",
+										"658fc819045dfdd54c93584d"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "Origin, X-Requested-With, Content-Type, Accept, Authorization"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 30 Dec 2023 08:22:57 GMT"
+								},
+								{
+									"key": "X-RateLimit-Reset",
+									"value": "1703924638"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "127"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"7f-k+9feuQh5qOMYEq9AM4xaWpWOdU\""
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 0,\n    \"isSuccess\": true,\n    \"message\": \"Author Updated successful.\",\n    \"data\": {\n        \"_id\": \"658fc819045dfdd54c93584d\"\n    },\n    \"error\": null\n}"
+						}
+					]
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/v1/author/658fdddd5fd785c763497ae1",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"v1",
+								"author",
+								"658fdddd5fd785c763497ae1"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/v1/author/658fdddd5fd785c763497ae1",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"v1",
+										"author",
+										"658fdddd5fd785c763497ae1"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "Origin, X-Requested-With, Content-Type, Accept, Authorization"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "58"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 30 Dec 2023 09:09:48 GMT"
+								},
+								{
+									"key": "X-RateLimit-Reset",
+									"value": "1703927445"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "96"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"60-vvViRNz2qBYEr3+uSz9c3prIeBA\""
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 0,\n    \"isSuccess\": true,\n    \"message\": \"Author Remove successful.\",\n    \"data\": true,\n    \"error\": null\n}"
+						},
+						{
+							"name": "Failed",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/v1/author/658fdddd5fd785c763497ae1",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"v1",
+										"author",
+										"658fdddd5fd785c763497ae1"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "Origin, X-Requested-With, Content-Type, Accept, Authorization"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "57"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 30 Dec 2023 09:10:18 GMT"
+								},
+								{
+									"key": "X-RateLimit-Reset",
+									"value": "1703927445"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "140"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"8c-/LrwQhcfs6oFlaP7jm7t1yRo9+o\""
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 130,\n    \"isSuccess\": false,\n    \"message\": \"User Does Not Exist.\",\n    \"data\": null,\n    \"error\": {\n        \"code\": \"400130\",\n        \"body\": [\n            \"Author was not found.\"\n        ]\n    }\n}"
+						}
+					]
+				}
+			],
+			"description": "Create, Retrieve, Update and Delete for all authors in the system"
+		},
+		{
+			"name": "Category Access",
+			"item": [
+				{
+					"name": "Create",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Sci-fi\",\r\n    \"parent_id\": \"\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/v1/category",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"v1",
+								"category"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Failed",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"Scared\",\r\n    \"parent_id\": \"658fe01e18ec7ef7fbf79ae7\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/v1/category",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"v1",
+										"category"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "Origin, X-Requested-With, Content-Type, Accept, Authorization"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 30 Dec 2023 09:22:51 GMT"
+								},
+								{
+									"key": "X-RateLimit-Reset",
+									"value": "1703928232"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "140"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"8c-Q/buBNKZUnmH7Sg8q79GAAoA6ms\""
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 140,\n    \"isSuccess\": false,\n    \"message\": \"Already Exist.\",\n    \"data\": null,\n    \"error\": {\n        \"code\": \"400140\",\n        \"body\": [\n            \"Category was already exist.\"\n        ]\n    }\n}"
+						},
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"Sci-fi\",\r\n    \"parent_id\": \"\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/v1/category",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"v1",
+										"category"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "Origin, X-Requested-With, Content-Type, Accept, Authorization"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "58"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 30 Dec 2023 09:33:31 GMT"
+								},
+								{
+									"key": "X-RateLimit-Reset",
+									"value": "1703928860"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "127"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"7f-pdOSQ58hpyxjTooeTbgLdZmwyvc\""
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 0,\n    \"isSuccess\": true,\n    \"message\": \"Category Store successful.\",\n    \"data\": {\n        \"_id\": \"658fe3eb57f7dcd507c5e1d6\"\n    },\n    \"error\": null\n}"
+						}
+					]
+				},
+				{
+					"name": "List",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/v1/category",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"v1",
+								"category"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/v1/category",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"v1",
+										"category"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "Origin, X-Requested-With, Content-Type, Accept, Authorization"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "57"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 30 Dec 2023 09:18:12 GMT"
+								},
+								{
+									"key": "X-RateLimit-Reset",
+									"value": "1703927899"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "330"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"14a-irdw+l+zLQaoTtArTMTHu4CO9VA\""
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 0,\n    \"isSuccess\": true,\n    \"message\": \"Retrieve Categories Successful.\",\n    \"data\": {\n        \"categories\": [\n            {\n                \"_id\": \"658fe04a18ec7ef7fbf79aeb\",\n                \"name\": \"Scared\"\n            },\n            {\n                \"_id\": \"658fe01e18ec7ef7fbf79ae7\",\n                \"name\": \"Horror\"\n            }\n        ],\n        \"paging\": {\n            \"currentPage\": 1,\n            \"totalPages\": 1,\n            \"hasPrevPage\": false,\n            \"hasNextPage\": false,\n            \"prevPage\": null,\n            \"nextPage\": null\n        }\n    },\n    \"error\": null\n}"
+						}
+					]
+				},
+				{
+					"name": "Details",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/v1/category/658fe01e18ec7ef7fbf79ae7",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"v1",
+								"category",
+								"658fe01e18ec7ef7fbf79ae7"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "With Parent Success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/v1/category/658fe04a18ec7ef7fbf79aeb",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"v1",
+										"category",
+										"658fe04a18ec7ef7fbf79aeb"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "Origin, X-Requested-With, Content-Type, Accept, Authorization"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 30 Dec 2023 09:31:44 GMT"
+								},
+								{
+									"key": "X-RateLimit-Reset",
+									"value": "1703928765"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "294"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"126-yDF/xZHslw462dX+b2Iil3Z3Rd0\""
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 0,\n    \"isSuccess\": true,\n    \"message\": \"Retrieve Category Details successful.\",\n    \"data\": {\n        \"_id\": \"658fe04a18ec7ef7fbf79aeb\",\n        \"name\": \"Scared\",\n        \"parent\": {\n            \"_id\": \"658fe01e18ec7ef7fbf79ae7\",\n            \"name\": \"Horror\"\n        },\n        \"created_at\": \"2023-12-30T09:18:02.342Z\",\n        \"updated_at\": \"2023-12-30T09:18:02.342Z\"\n    },\n    \"error\": null\n}"
+						},
+						{
+							"name": "Without Parent Success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/v1/category/658fe01e18ec7ef7fbf79ae7",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"v1",
+										"category",
+										"658fe01e18ec7ef7fbf79ae7"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "Origin, X-Requested-With, Content-Type, Accept, Authorization"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "58"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 30 Dec 2023 09:32:21 GMT"
+								},
+								{
+									"key": "X-RateLimit-Reset",
+									"value": "1703928765"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "248"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"f8-cVDGEINpH4V1dyxUxz0K6+YbbIM\""
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 0,\n    \"isSuccess\": true,\n    \"message\": \"Retrieve Category Details successful.\",\n    \"data\": {\n        \"_id\": \"658fe01e18ec7ef7fbf79ae7\",\n        \"name\": \"Horror\",\n        \"parent\": null,\n        \"created_at\": \"2023-12-30T09:17:18.698Z\",\n        \"updated_at\": \"2023-12-30T09:17:18.698Z\"\n    },\n    \"error\": null\n}"
+						}
+					]
+				},
+				{
+					"name": "Update",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Ghost\",\r\n    \"parent_id\": \"\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/v1/category/658fe3df57f7dcd507c5e1d2",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"v1",
+								"category",
+								"658fe3df57f7dcd507c5e1d2"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"Ghost\",\r\n    \"parent_id\": \"\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/v1/category/658fe3df57f7dcd507c5e1d2",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"v1",
+										"category",
+										"658fe3df57f7dcd507c5e1d2"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "Origin, X-Requested-With, Content-Type, Accept, Authorization"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "58"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 30 Dec 2023 09:37:12 GMT"
+								},
+								{
+									"key": "X-RateLimit-Reset",
+									"value": "1703929088"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "129"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"81-Np1f2EykpUBQzg9u9vXJTfkLXF4\""
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 0,\n    \"isSuccess\": true,\n    \"message\": \"Category Updated successful.\",\n    \"data\": {\n        \"_id\": \"658fe3df57f7dcd507c5e1d2\"\n    },\n    \"error\": null\n}"
+						},
+						{
+							"name": "Already Exist",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"Ghost\",\r\n    \"parent_id\": \"\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/v1/category/658fe3df57f7dcd507c5e1d2",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"v1",
+										"category",
+										"658fe3df57f7dcd507c5e1d2"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "Origin, X-Requested-With, Content-Type, Accept, Authorization"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "56"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 30 Dec 2023 09:37:45 GMT"
+								},
+								{
+									"key": "X-RateLimit-Reset",
+									"value": "1703929088"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "145"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"91-N5UFPcvQ3Pu82r7ad7HE0jSgcJM\""
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 140,\n    \"isSuccess\": false,\n    \"message\": \"Already Exist.\",\n    \"data\": null,\n    \"error\": {\n        \"code\": \"400140\",\n        \"body\": [\n            \"Category name was already exist.\"\n        ]\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/v1/category/658fe3df57f7dcd507c5e1d2",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"v1",
+								"category",
+								"658fe3df57f7dcd507c5e1d2"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/v1/category/658fe3df57f7dcd507c5e1d2",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"v1",
+										"category",
+										"658fe3df57f7dcd507c5e1d2"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "Origin, X-Requested-With, Content-Type, Accept, Authorization"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 30 Dec 2023 09:41:20 GMT"
+								},
+								{
+									"key": "X-RateLimit-Reset",
+									"value": "1703929341"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "98"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"62-/DO9aLh7UfTbr07zzJiWZBfCDAA\""
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 0,\n    \"isSuccess\": true,\n    \"message\": \"Category Remove successful.\",\n    \"data\": true,\n    \"error\": null\n}"
+						},
+						{
+							"name": "Failed",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/v1/category/658fe3df57f7dcd507c5e1d2",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"v1",
+										"category",
+										"658fe3df57f7dcd507c5e1d2"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "Origin, X-Requested-With, Content-Type, Accept, Authorization"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "58"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 30 Dec 2023 09:41:43 GMT"
+								},
+								{
+									"key": "X-RateLimit-Reset",
+									"value": "1703929341"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "132"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"84-PdiZv2c+ava4JnhYjCTX4EXUAIk\""
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 190,\n    \"isSuccess\": false,\n    \"message\": \"Not Found.\",\n    \"data\": null,\n    \"error\": {\n        \"code\": \"400190\",\n        \"body\": [\n            \"Category was not found.\"\n        ]\n    }\n}"
+						}
+					]
+				}
+			],
+			"description": "Create, Retrieve, Update and Delete for all categories in the system"
+		},
+		{
+			"name": "Book Access",
+			"item": [
+				{
+					"name": "Create",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"The 1-PAGE MARKETING PLAN Second Edition\",\r\n    \"subtitle\": \"Small And Medium Business Helper\",\r\n    \"isbn\": \"97785664268\",\r\n    \"author_id\": \"658fc7b4640a040ee8fa7940\",\r\n    \"category_id\": [\r\n        \"658fe3eb57f7dcd507c5e1d6\"\r\n    ],\r\n    \"edition\": 2,\r\n    \"publisher\": \"အင်းဝစာတိုက်\",\r\n    \"published_year\": 2017,\r\n    \"published_address\": \"ဦးထွန်းလင်းခြံလမ်း လှည်းတန်း\",\r\n    \"summary\": \"Do Something Great...\",\r\n    \"price_per_day\": 200\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/v1/book",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"v1",
+								"book"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"title\": \"The 1-PAGE MARKETING PLAN\",\r\n    \"subtitle\": \"Small And Medium Business Helper\",\r\n    \"isbn\": \"97785664268\",\r\n    \"author_id\": \"658fc7b4640a040ee8fa7940\",\r\n    \"category_id\": [\r\n        \"658fe3eb57f7dcd507c5e1d6\"\r\n    ],\r\n    \"edition\": 1,\r\n    \"publisher\": \"အင်းဝစာပေ\",\r\n    \"published_year\": 2017,\r\n    \"published_address\": \"ဦးထွန်းလင်းခြံလမ်း လှည်းတန်း\",\r\n    \"summary\": \"Do Something...\",\r\n    \"price_per_day\": 175\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/v1/book",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"v1",
+										"book"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "Origin, X-Requested-With, Content-Type, Accept, Authorization"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 30 Dec 2023 11:56:36 GMT"
+								},
+								{
+									"key": "X-RateLimit-Reset",
+									"value": "1703937457"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "130"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"82-xX3QN+Yc7kQM/QOSfiqsma9SuhA\""
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 0,\n    \"isSuccess\": true,\n    \"message\": \"Book Record Store successful.\",\n    \"data\": {\n        \"_id\": \"659005740f610e25c335f8a0\"\n    },\n    \"error\": null\n}"
+						}
+					]
+				},
+				{
+					"name": "List",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/v1/book?title=MARKETING&category_id=658fe3eb57f7dcd507c5e1d0&author_id=658fc7b4640a040ee8fa7940&id=659005740f610e25c335f8a0",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"v1",
+								"book"
+							],
+							"query": [
+								{
+									"key": "title",
+									"value": "MARKETING"
+								},
+								{
+									"key": "category_id",
+									"value": "658fe3eb57f7dcd507c5e1d0"
+								},
+								{
+									"key": "author_id",
+									"value": "658fc7b4640a040ee8fa7940"
+								},
+								{
+									"key": "id",
+									"value": "659005740f610e25c335f8a0"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/v1/book?title=MARKETING&category_id=658fe3eb57f7dcd507c5e1d0&author_id=658fc7b4640a040ee8fa7940&id=659005740f610e25c335f8a0",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"v1",
+										"book"
+									],
+									"query": [
+										{
+											"key": "title",
+											"value": "MARKETING"
+										},
+										{
+											"key": "category_id",
+											"value": "658fe3eb57f7dcd507c5e1d0"
+										},
+										{
+											"key": "author_id",
+											"value": "658fc7b4640a040ee8fa7940"
+										},
+										{
+											"key": "id",
+											"value": "659005740f610e25c335f8a0"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "Origin, X-Requested-With, Content-Type, Accept, Authorization"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "57"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 30 Dec 2023 18:33:58 GMT"
+								},
+								{
+									"key": "X-RateLimit-Reset",
+									"value": "1703961271"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "817"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"331-aYPStFVXcCiEjytSAXh5mppnZ5U\""
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 0,\n    \"isSuccess\": true,\n    \"message\": \"Retrieve Book Records Successful.\",\n    \"data\": {\n        \"books\": [\n            {\n                \"_id\": \"659005740f610e25c335f8a0\",\n                \"title\": \"The 1-PAGE MARKETING PLAN\",\n                \"subtitle\": \"The 1-PAGE MARKETING PLAN\",\n                \"isbn\": \"97785664268\",\n                \"author\": {\n                    \"_id\": \"658fc7b4640a040ee8fa7940\",\n                    \"name\": \"မိုးရှင်း(I.M.T)\"\n                },\n                \"categories\": [\n                    {\n                        \"_id\": \"658fe3eb57f7dcd507c5e1d6\",\n                        \"name\": \"Sci-fi\"\n                    }\n                ],\n                \"publisher\": \"အင်းဝစာတိုက်\",\n                \"copies\": 1,\n                \"available_copies\": 1,\n                \"created_at\": \"2023-12-30T11:56:36.123Z\",\n                \"updated_at\": \"2023-12-30T12:39:45.985Z\"\n            }\n        ],\n        \"paging\": {\n            \"currentPage\": 1,\n            \"totalPages\": 1,\n            \"hasPrevPage\": false,\n            \"hasNextPage\": false,\n            \"prevPage\": null,\n            \"nextPage\": null\n        },\n        \"filters\": {\n            \"id\": \"659005740f610e25c335f8a0\",\n            \"title\": \"MARKETING\",\n            \"author_id\": \"658fc7b4640a040ee8fa7940\",\n            \"category_id\": \"658fe3eb57f7dcd507c5e1d0\"\n        }\n    },\n    \"error\": null\n}"
+						}
+					]
+				},
+				{
+					"name": "Details",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/v1/book/659005740f610e25c335f8a0",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"v1",
+								"book",
+								"659005740f610e25c335f8a0"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/v1/book/659005740f610e25c335f8a0",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"v1",
+										"book",
+										"659005740f610e25c335f8a0"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "Origin, X-Requested-With, Content-Type, Accept, Authorization"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 30 Dec 2023 15:39:36 GMT"
+								},
+								{
+									"key": "X-RateLimit-Reset",
+									"value": "1703950837"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "805"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"325-74FkAYFMJXSUB6T3xrbYtxLO8A4\""
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 0,\n    \"isSuccess\": true,\n    \"message\": \"Retrieve Book Record Details successful.\",\n    \"data\": {\n        \"_id\": \"659005740f610e25c335f8a0\",\n        \"title\": \"The 1-PAGE MARKETING PLAN\",\n        \"subtitle\": \"The 1-PAGE MARKETING PLAN\",\n        \"isbn\": \"97785664268\",\n        \"author\": {\n            \"_id\": \"658fc7b4640a040ee8fa7940\",\n            \"name\": \"မိုးရှင်း(I.M.T)\"\n        },\n        \"categories\": [\n            {\n                \"_id\": \"658fe3eb57f7dcd507c5e1d6\",\n                \"name\": \"Sci-fi\"\n            }\n        ],\n        \"edition\": 1,\n        \"publisher\": \"အင်းဝစာတိုက်\",\n        \"published_year\": 2017,\n        \"published_address\": \"ဦးထွန်းလင်းခြံလမ်း လှည်းတန်း\",\n        \"summary\": \"Do Something Great...\",\n        \"copies\": [\n            {\n                \"_id\": \"659005740f610e25c335f8a2\",\n                \"book_code\": \"r9TfOt\",\n                \"is_available\": true,\n                \"price_per_day\": 200\n            }\n        ],\n        \"created_at\": \"2023-12-30T11:56:36.123Z\",\n        \"updated_at\": \"2023-12-30T12:39:45.985Z\"\n    },\n    \"error\": null\n}"
+						}
+					]
+				},
+				{
+					"name": "Update",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"The 1-PAGE MARKETING PLAN\",\r\n    \"subtitle\": \"Small And Medium Business Helper\",\r\n    \"isbn\": \"97785664268\",\r\n    \"author_id\": \"658fc7b4640a040ee8fa7940\",\r\n    \"category_id\": [\r\n        \"658fe3eb57f7dcd507c5e1d6\"\r\n    ],\r\n    \"edition\": 1,\r\n    \"publisher\": \"အင်းဝစာတိုက်\",\r\n    \"published_year\": 2017,\r\n    \"published_address\": \"ဦးထွန်းလင်းခြံလမ်း လှည်းတန်း\",\r\n    \"summary\": \"Do Something Great...\",\r\n    \"price_per_day\": 200\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/v1/book/659005740f610e25c335f8a0",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"v1",
+								"book",
+								"659005740f610e25c335f8a0"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"title\": \"The 1-PAGE MARKETING PLAN\",\r\n    \"subtitle\": \"Small And Medium Business Helper\",\r\n    \"isbn\": \"97785664268\",\r\n    \"author_id\": \"658fc7b4640a040ee8fa7940\",\r\n    \"category_id\": [\r\n        \"658fe3eb57f7dcd507c5e1d6\"\r\n    ],\r\n    \"edition\": 1,\r\n    \"publisher\": \"အင်းဝစာတိုက်\",\r\n    \"published_year\": 2017,\r\n    \"published_address\": \"ဦးထွန်းလင်းခြံလမ်း လှည်းတန်း\",\r\n    \"summary\": \"Do Something Great...\",\r\n    \"price_per_day\": 200\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/v1/book/659005740f610e25c335f8a0",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"v1",
+										"book",
+										"659005740f610e25c335f8a0"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "Origin, X-Requested-With, Content-Type, Accept, Authorization"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 30 Dec 2023 12:37:45 GMT"
+								},
+								{
+									"key": "X-RateLimit-Reset",
+									"value": "1703939926"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "132"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"84-uEWPhLlzm8va5CHQkk43lQPYIH8\""
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 0,\n    \"isSuccess\": true,\n    \"message\": \"Book Record Updated successful.\",\n    \"data\": {\n        \"_id\": \"659005740f610e25c335f8a0\"\n    },\n    \"error\": null\n}"
+						},
+						{
+							"name": "Failed",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"title\": \"The 1-PAGE MARKETING PLAN\",\r\n    \"subtitle\": \"Small And Medium Business Helper\",\r\n    \"isbn\": \"97785664268\",\r\n    \"author_id\": \"658fc7b4640a040ee8fa7940\",\r\n    \"category_id\": [\r\n        \"658fe3eb57f7dcd507c5e1d6\"\r\n    ],\r\n    \"edition\": 1,\r\n    \"publisher\": \"အင်းဝစာတိုက်\",\r\n    \"published_year\": 2017,\r\n    \"published_address\": \"ဦးထွန်းလင်းခြံလမ်း လှည်းတန်း\",\r\n    \"summary\": \"Do Something Great...\",\r\n    \"price_per_day\": 200\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/v1/book/659005740f610e25c335f8a",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"v1",
+										"book",
+										"659005740f610e25c335f8a"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "Origin, X-Requested-With, Content-Type, Accept, Authorization"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 30 Dec 2023 12:43:33 GMT"
+								},
+								{
+									"key": "X-RateLimit-Reset",
+									"value": "1703940274"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "245"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"f5-i/OG5A+Gqfdq+xWpEIuc8lJSRzE\""
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 180,\n    \"isSuccess\": false,\n    \"message\": \"Server Error! Something went wrong.\",\n    \"data\": null,\n    \"error\": {\n        \"code\": \"500180\",\n        \"body\": [\n            \"Cast to ObjectId failed for value \\\"659005740f610e25c335f8a\\\" (type string) at path \\\"_id\\\" for model \\\"books\\\"\"\n        ]\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/v1/book/659010a3e9dfc138ba9b1eb5",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"v1",
+								"book",
+								"659010a3e9dfc138ba9b1eb5"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/v1/book/659010a3e9dfc138ba9b1eb5",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"v1",
+										"book",
+										"659010a3e9dfc138ba9b1eb5"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "Origin, X-Requested-With, Content-Type, Accept, Authorization"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 30 Dec 2023 12:55:49 GMT"
+								},
+								{
+									"key": "X-RateLimit-Reset",
+									"value": "1703941010"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "101"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"65-AxlU1/iL5SKTLQK0HGotZNe+noI\""
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 0,\n    \"isSuccess\": true,\n    \"message\": \"Book Record Remove successful.\",\n    \"data\": true,\n    \"error\": null\n}"
+						},
+						{
+							"name": "Failed",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/v1/book/659010a3e9dfc138ba9b1eb5",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"v1",
+										"book",
+										"659010a3e9dfc138ba9b1eb5"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "Origin, X-Requested-With, Content-Type, Accept, Authorization"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "58"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 30 Dec 2023 12:56:09 GMT"
+								},
+								{
+									"key": "X-RateLimit-Reset",
+									"value": "1703941010"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "128"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"80-1dYbX9IjRTl8xFAyau4MubcopvE\""
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 190,\n    \"isSuccess\": false,\n    \"message\": \"Not Found.\",\n    \"data\": null,\n    \"error\": {\n        \"code\": \"400190\",\n        \"body\": [\n            \"Book was not found.\"\n        ]\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Add Copy",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"price_per_day\": 150\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/v1/book/659005740f610e25c335f8a0/add-copy",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"v1",
+								"book",
+								"659005740f610e25c335f8a0",
+								"add-copy"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Add Copy",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"price_per_day\": 150\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/v1/book/659005740f610e25c335f8a0/add-copy",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"v1",
+										"book",
+										"659005740f610e25c335f8a0",
+										"add-copy"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "Origin, X-Requested-With, Content-Type, Accept, Authorization"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 30 Dec 2023 18:57:56 GMT"
+								},
+								{
+									"key": "X-RateLimit-Reset",
+									"value": "1703962737"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "156"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"9c-RFF7cHsWTBsO2qUL8QJH4gsicWo\""
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 0,\n    \"isSuccess\": true,\n    \"message\": \"Book Record Copy Added successful.\",\n    \"data\": {\n        \"_id\": \"659068344bc86e41923f6783\",\n        \"book_code\": \"L1YWiv\"\n    },\n    \"error\": null\n}"
+						}
+					]
+				},
+				{
+					"name": "Return Book",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"book_code\": \"r9TfOt\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/v1/book/659005740f610e25c335f8a0/return",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"v1",
+								"book",
+								"659005740f610e25c335f8a0",
+								"return"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"book_code\": \"r9TfOt\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/v1/book/659005740f610e25c335f8a0/return",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"v1",
+										"book",
+										"659005740f610e25c335f8a0",
+										"return"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "Origin, X-Requested-With, Content-Type, Accept, Authorization"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 30 Dec 2023 20:04:52 GMT"
+								},
+								{
+									"key": "X-RateLimit-Reset",
+									"value": "1703966753"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "173"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"ad-o6LIIN4nFPwuSuiLFbjH2+yjCok\""
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 0,\n    \"isSuccess\": true,\n    \"message\": \"Book Record Updated successful.\",\n    \"data\": {\n        \"_id\": \"659005740f610e25c335f8a0\",\n        \"book_code\": \"r9TfOt\",\n        \"is_available\": true\n    },\n    \"error\": null\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Student Access",
+			"item": [
+				{
+					"name": "List",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/v1/student",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"v1",
+								"student"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/v1/student",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"v1",
+										"student"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "Origin, X-Requested-With, Content-Type, Accept, Authorization"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 30 Dec 2023 10:12:33 GMT"
+								},
+								{
+									"key": "X-RateLimit-Reset",
+									"value": "1703931214"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "225"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"e1-aZcb38QVdSoukI32/J/EFTkFPM0\""
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 0,\n    \"isSuccess\": true,\n    \"message\": \"Retrieve Students Successful.\",\n    \"data\": {\n        \"students\": [],\n        \"paging\": {\n            \"currentPage\": 1,\n            \"totalPages\": 1,\n            \"hasPrevPage\": false,\n            \"hasNextPage\": false,\n            \"prevPage\": null,\n            \"nextPage\": null\n        }\n    },\n    \"error\": null\n}"
+						}
+					]
+				},
+				{
+					"name": "Details",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/v1/student/659078d54bc46b0b5466663c",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"v1",
+								"student",
+								"659078d54bc46b0b5466663c"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Details",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/v1/student/659078d54bc46b0b5466663c",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"v1",
+										"student",
+										"659078d54bc46b0b5466663c"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "Origin, X-Requested-With, Content-Type, Accept, Authorization"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 31 Dec 2023 04:41:09 GMT"
+								},
+								{
+									"key": "X-RateLimit-Reset",
+									"value": "1703997730"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "303"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"12f-aWo36MXJDwD70kSr+PRNUoqVPCI\""
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 0,\n    \"isSuccess\": true,\n    \"message\": \"Retrieve Student Details successful.\",\n    \"data\": {\n        \"_id\": \"659078d54bc46b0b5466663c\",\n        \"name\": \"Jackie\",\n        \"phone\": \"09797128207\",\n        \"email\": \"student@library.com\",\n        \"address\": \"bahan\",\n        \"created_at\": \"2023-12-30T20:08:53.450Z\",\n        \"updated_at\": \"2023-12-30T20:08:53.450Z\"\n    },\n    \"error\": null\n}"
+						}
+					]
+				},
+				{
+					"name": "Borrowed Books",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/v1/student/659078d54bc46b0b5466663c/borrowed-book",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"v1",
+								"student",
+								"659078d54bc46b0b5466663c",
+								"borrowed-book"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Borrow Books",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/v1/student/659078d54bc46b0b5466663c/borrowed-book",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"v1",
+										"student",
+										"659078d54bc46b0b5466663c",
+										"borrowed-book"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "Origin, X-Requested-With, Content-Type, Accept, Authorization"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 31 Dec 2023 04:42:46 GMT"
+								},
+								{
+									"key": "X-RateLimit-Reset",
+									"value": "1703997827"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "315"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"13b-hmkK+e1Op3XvHZpraOts835IVLI\""
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 0,\n    \"isSuccess\": true,\n    \"message\": \"Retrieve Student Borrowed Books Successful\",\n    \"data\": {\n        \"_id\": \"659078d54bc46b0b5466663c\",\n        \"student_name\": \"Jackie\",\n        \"borrowed_books\": [\n            {\n                \"_id\": \"659005740f610e25c335f8a0\",\n                \"book_code\": \"r9TfOt\",\n                \"title\": \"The 1-PAGE MARKETING PLAN\",\n                \"isbn\": \"97785664268\",\n                \"is_copy\": false\n            }\n        ]\n    },\n    \"error\": null\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Check Service",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/v1/checkService",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"v1",
+						"checkService"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Check Service",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/v1/checkService",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"v1",
+								"checkService"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Access-Control-Allow-Headers",
+							"value": "Origin, X-Requested-With, Content-Type, Accept, Authorization"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "97"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"61-L6q60Ttg9oLvb3330EOZbHgpDDU\""
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 29 Dec 2023 13:59:46 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"statusCode\": 0,\n    \"isSuccess\": true,\n    \"message\": \"Success\",\n    \"data\": [\n        \"APIs are working...\"\n    ],\n    \"error\": null\n}"
+				}
+			]
+		},
+		{
+			"name": "AES Decrypt [Dev Tool]",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"data\": \"kHDQVtod3XONt5GkCXEBn0mH0Sg1bJcsiE7YibCZZNqGCbAfMrl8RlyqOC8ylM+ffi6VT9JXq1qy2+yh9oL6V6Fg/VJT6pj1vMhvRI2xLG0cDyq+p5OAIUdcs3aTz21MDDMKy3zDMiwF4L8h+6wMi2hEh6ZeDGrbnURdcLJHtPnbR6NAJf7NDidxk5gVhLvgT0Qgsx4hqjBQ2bNDVJBvifcw3ItCeQsGyrdwT5g9EEH6IXoCerAvAb0Kh+YvFJCPTv7zeMEgVRBsONFgNUaj/1VChhGLsX1wbFOCyfKUPT0=\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/v1/aes-decrypt",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"v1",
+						"aes-decrypt"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "AES Decrypt",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"data\": \"kHDQVtod3XONt5GkCXEBn0mH0Sg1bJcsiE7YibCZZNqGCbAfMrl8RlyqOC8ylM+ffi6VT9JXq1qy2+yh9oL6V6Fg/VJT6pj1vMhvRI2xLG0cDyq+p5OAIUdcs3aTz21MDDMKy3zDMiwF4L8h+6wMi2hEh6ZeDGrbnURdcLJHtPnbR6NAJf7NDidxk5gVhLvgT0Qgsx4hqjBQ2bNDVJBvifcw3ItCeQsGyrdwT5g9EEH6IXoCerAvAb0Kh+YvFJCPTv7zeMEgVRBsONFgNUaj/1VChhGLsX1wbFOCyfKUPT0=\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/v1/aes-decrypt",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"v1",
+								"aes-decrypt"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Access-Control-Allow-Headers",
+							"value": "Origin, X-Requested-With, Content-Type, Accept, Authorization"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "297"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"129-tqKWXO8xHsEG5htEdr8suswqiXs\""
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 31 Dec 2023 04:39:17 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"statusCode\": 0,\n    \"isSuccess\": true,\n    \"message\": \"Success\",\n    \"data\": {\n        \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1OGY5NjI0ZTZiY2MzZjUzYmUzN2ZjZCIsImlhdCI6MTcwMzk5NzIxMCwiZXhwIjoxNzA0MDgzNjEwLCJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjQwMDAifQ.eRxRbJ6Xnektj8lOfjmOWycMlfBp3yC8x0qZZm189MM\"\n    },\n    \"error\": null\n}"
+				}
+			]
+		}
+	]
+}

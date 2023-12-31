@@ -3,6 +3,7 @@ const ErrorResponse = require("../utils/errorResponse.util");
 const httpConfig = require("../configs/http.config");
 const jwtUtil = require('./../utils/jwt.util');
 const bcrypt = require('bcryptjs');
+const crypto = require('./../utils/crypto.util');
 
 const emailPattern = /^([a-zA-Z0-9._-]+)@([a-zA-Z0-9.-]+)\.([a-zA-Z]{2,6})$/;
 const DEFAULT_SALT_ROUNDS = 10;
@@ -74,7 +75,7 @@ AuthService.prototype = {
                         id: admin._id,
                         username: admin.name,
                         email: admin.email,
-                        accessToken: token
+                        accessToken: crypto.encryptMessage(token)
                     });
                 }
                 else 

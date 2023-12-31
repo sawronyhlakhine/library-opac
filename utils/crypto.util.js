@@ -1,18 +1,19 @@
-const CryptoJS = require('crypto-js')
-const MD5 = require('md5')
+const CryptoJS = require('crypto-js');
+const MD5 = require('md5');
+const {AES_ENCRYPT} = require("../configs/app.config");
 
-exports.encryptMessage = (data = '', ENC_KEY, IV) => {
-    const cipher = CryptoJS.AES.encrypt(data, CryptoJS.enc.Utf8.parse(ENC_KEY), {
-        iv: CryptoJS.enc.Utf8.parse(IV),
+exports.encryptMessage = (data = '') => {
+    const cipher = CryptoJS.AES.encrypt(data, CryptoJS.enc.Utf8.parse(AES_ENCRYPT.ENC_KEY), {
+        iv: CryptoJS.enc.Utf8.parse(AES_ENCRYPT.IV),
         padding: CryptoJS.pad.Pkcs7,
         mode: CryptoJS.mode.CBC
     });
     return cipher.toString();
 }
 
-exports.decryptMessage = (data = '', ENC_KEY, IV) => {
-    const decryptedBytes = CryptoJS.AES.decrypt(data, CryptoJS.enc.Utf8.parse(ENC_KEY), {
-        iv: CryptoJS.enc.Utf8.parse(IV),
+exports.decryptMessage = (data = '') => {
+    const decryptedBytes = CryptoJS.AES.decrypt(data, CryptoJS.enc.Utf8.parse(AES_ENCRYPT.ENC_KEY), {
+        iv: CryptoJS.enc.Utf8.parse(AES_ENCRYPT.IV),
         padding: CryptoJS.pad.Pkcs7,
         mode: CryptoJS.mode.CBC
     });    

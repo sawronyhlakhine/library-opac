@@ -83,6 +83,7 @@ StudentService.prototype = {
                         if (bookCopy.book_id)
                             resultData.push({
                                 _id: bookCopy.book_id._id,
+                                book_code: bookCopy.book_code,
                                 title: bookCopy.book_id.title,
                                 isbn: bookCopy.book_id.isbn,
                                 is_copy: bookCopy.is_copy,

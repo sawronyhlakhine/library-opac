@@ -14,10 +14,15 @@ let dbHost = process.env.DB_HOST || dbConfig.DB_HOST,
     dbConnection = process.env.DB_CONNECTION || dbConfig.DB_DRIVER,
     dbUserName = encodeURIComponent(process.env.DB_USERNAME || dbConfig.DB_USERNAME),
     dbPwd = encodeURIComponent(process.env.DB_PASSWORD || dbConfig.DB_PASSWORD),
-    useAuth = process.env.DB_USE_AUTH || 1;
+    useAuth = process.env.DB_USE_AUTH || 1,
+    useAtlas = process.env.ATLAS_USE || "false",
+    atlasUrl = process.env.ATLAS_URL || null;
 
 let url;
-if (parseInt(useAuth))
+console.log();
+if (atlasUrl && useAtlas.toLowerCase() == "true" || useAtlas.toLowerCase() == "yes")
+    url = atlasUrl;
+else if (parseInt(useAuth))
     url = `${dbConnection}://${dbUserName}:${dbPwd}@${dbHost}:${dbPort}/${dbName}?authSource=admin`;
 else
     url = `${dbConnection}://${dbHost}:${dbPort}/${dbName}`;
