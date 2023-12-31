@@ -1,0 +1,50 @@
+extends layout
+
+block nav
+    - var active = "details"
+
+block content
+
+    h1.mt-4(style="text-align: center")= title
+    p(style="text-align: center") #{subtitle}
+    p(style="text-align: center") #{author.name}
+    p(style="text-align: center") #{`Publisher: ${publisher}, (${published_year}), ${published_address}`}
+    p(style="text-align: center") #{`Editions: ${edition}`}
+    //- p(style="text-align: center") #{subtitle}
+
+    .container-fluid.py-4
+
+    .container-fluid.py-2
+        h3.fw-bold Copies
+        p.lead Available status to borrow.
+
+        .table-responsive.border.rounded-2.bg-light.bg-opacity-75
+            table#tblResults.table.table-striped
+                thead
+                    tr.headings
+                        th.text-center Code
+                        th.text-center Available
+                        th.text-center Copy
+                        th.text-center Price Per Day
+                        th.text-center Actions
+                tbody 
+                    if copies && copies.length > 0
+                        -for(let index = 0; index < copies.length; index++)
+                            tr 
+                                td.text-center= copies[index].book_code
+                                td.text-center
+                                    if (copies[index].is_available)
+                                        | YES
+                                    if (!copies[index].is_available)
+                                        | NO
+                                td.text-center
+                                    if (copies[index].is_copy)
+                                        | YES
+                                    if (!copies[index].is_copy)
+                                        | NO
+                                td.text-center= copies[index].price_per_day
+                                td.text-center
+                                    if (copies[index].is_available)
+                                        a.btn.btn-sm.btn-primary(href="/borrow-entry?book_code=" + copies[index].book_code) Borrow
+                                    if (!copies[index].is_available)
+                                        a.btn.btn-sm.btn-primary.disabled(href="/borrow-entry?book_code=" + copies[index].book_code) Borrow

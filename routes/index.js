@@ -28,12 +28,11 @@ fs
 	});
 
 /* GET home page. */
-router.get('/', asyncHandler((req, res, next) => {
-    res.render('index', { title: process.env.APP_NAME || "Express JS" });
-}));
+// router.get('/', asyncHandler((req, res, next) => {
+//     res.render('index', { title: process.env.APP_NAME || "Express JS" });
+// }));
 
-
-routeModules.push(router);
+// routeModules.push(router);
 loadModules(currentFolderPath);
 module.exports = {
 	routeModules

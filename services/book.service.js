@@ -320,9 +320,10 @@ BookService.prototype = {
 
                 let bookCopy = await db.BookCopy.findOneAndUpdate({ book_id: book._id, book_code: body.book_code }, { is_available: true,});
                 let bookRent = await db.BookRent.findOne({ copy_id: bookCopy._id});
+                // console.log(bookRent);
                 if (bookRent)
                 {
-                    let startDate = moment(bookRent.start_date.toString()),
+                    let startDate = moment(bookRent.start_date),
                         endDate = moment(),
                         dayDifferents = endDate.diff(startDate, 'days');
     

@@ -1,0 +1,38 @@
+extends layout
+
+block nav
+    - var active = "index"
+
+block content
+
+    h1.mt-4(style="text-align: center")= title
+    p(style="text-align: center") Welcome to #{title}
+
+    .container-fluid.py-4
+        h3.fw-bold Borrow Book
+        p.lead Please Fill the information
+        .p-4.mt-2.rounded-2.border
+            form(action="/borrow-entry/"+id method="POST")
+                .row
+                    .col-12.col-md-6
+                        label.form-label(for='txtIsbn') Book Code
+                        .input-group.mb-3
+                            input#txtIsbn.form-control(type='text' name="book_code" placeholder='Enter Title' autocomplete='off' value=book_code readonly=true)
+                    .col-12.col-md-6
+                        label.form-label(for='txtPostcode') Name
+                        .input-group.mb-3
+                            input#txtPostcode.form-control(type='text' name="name" placeholder='Enter Name' autocomplete='off' required=true)
+                    .col-12.col-md-6
+                        label.form-label(for='txtPostcode') Email
+                        .input-group.mb-3
+                            input#txtPostcode.form-control(type='email' name="email" placeholder='Enter Email' autocomplete='off' required=true)
+                    .col-12.col-md-6
+                        label.form-label(for='txtPostcode') Address
+                        .input-group.mb-3
+                            input#txtPostcode.form-control(type='text' name="address" placeholder='Enter Address' autocomplete='off')
+                .mt-2
+                    button#btnSearch.btn.btn-primary(type='submit') Borrow!!
+                    span.spinner-grow.spinner-grow-sm.mx-1(id="spSearchSpinner" role="status")
+
+
+            p#pFeedbackInfo.lead.mt-3 

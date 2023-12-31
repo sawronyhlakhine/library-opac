@@ -1,5 +1,65 @@
 extends layout
 
+block nav
+	- var active = "index"
+
 block content
-  h1(style="text-align: center")= title
-  p(style="text-align: center") Welcome to #{title}
+
+	h1.mt-4(style="text-align: center")= title
+	p(style="text-align: center") Welcome to #{title}
+
+	.container-fluid.py-4
+		h3.fw-bold 1. Choose a book
+		p.lead Search for a book by Title, Author or ISBN
+		.p-4.mt-2.rounded-2.border
+			form(action="/" method="GET")
+				.row
+					.col-12.col-md-6
+						label.form-label(for='txtIsbn') Book's Title
+						.input-group.mb-3
+							span.input-group-text
+								i.fas.fa-book-open
+							input#txtIsbn.form-control(type='text' name="title" placeholder='Enter Title' autocomplete='off' value=filterFields.title)
+					.col-12.col-md-6
+						label.form-label(for='txtPostcode') ISBN
+						div.input-group.mb-3
+							span.input-group-text
+								i.fas.fa-book-open
+							input#txtPostcode.form-control(type='text' name="isbn" placeholder='Enter ISBN' autocomplete='off' value=filterFields.isbn)
+
+				.mt-2
+					button#btnSearch.btn.btn-warning(type='submit') Run search
+					span.spinner-grow.spinner-grow-sm.mx-1(id="spSearchSpinner" role="status")
+
+
+			p#pFeedbackInfo.lead.mt-3 
+
+	.container-fluid.py-2
+		h3.fw-bold 2. Results
+		p.lead The results of the search will be displayed here.
+		a#btnClear.btn.btn-outline-dark.mb-3(href="/") Reset search
+
+		.table-responsive.border.rounded-2.bg-light.bg-opacity-75
+			table#tblResults.table.table-striped
+				thead
+					tr.headings
+						th.text-center Title
+						th.text-center ISBN
+						th.text-center Available
+						th.text-center Unavailable
+						th.text-center Copies
+						th.text-center Actions
+				tbody 
+					if books && books.length > 0
+						-for(let index = 0; index < books.length; index++)
+							tr 
+								td.text-center= books[index].title
+								td.text-center= books[index].isbn
+								td.text-center= books[index].available_copies
+								td.text-center #{ books[index].copies-books[index].available_copies }
+								td.text-center= books[index].copies
+								td.text-center
+									a.btn.btn-sm.btn-primary(href="/details?id=" + books[index]._id) Details
+
+			include ./paging
+

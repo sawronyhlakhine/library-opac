@@ -1,0 +1,90 @@
+-let filterString = "";
+if (filterFields)
+    - for (var key in filterFields) {
+    -    if (filterFields.hasOwnProperty(key) && filterFields[key]) {
+    -       filterString+= `&${key}=${filterFields[key]}`;
+    -    }
+    - }
+div
+    //- FOR DESKTOP PAGINATIONS
+    .row.d-none.d-md-block
+        .col-12
+            - let pageRange = 2;
+            //- - let totalPages = 1;
+            - let rangeStart = () => (currentPage - pageRange > 1) ? currentPage - pageRange : 1;
+            - let rangeEnd = () => (currentPage + pageRange < totalPages) ? currentPage + pageRange : totalPages;
+            - let hasFirst = rangeStart !== 1;
+            - let hasLast = rangeEnd() < totalPages;
+
+            if totalPages > 1
+                .btn-toolbar.pull-right(role="toolbar" aria-label="Toolbar with button groups")
+                    .btn-group.mr-2(role="group" aria-label="First group")
+                        a.btn.btn-light.btn-sm.px-3(href= `${currentUrl}?page=1${filterString}` class= currentPage===1 ? "disabled" : "") 
+                            i.fa.fa-angle-double-left.mr-3
+                            | First
+                    
+                    .btn-group.mr-2(role="group" aria-label="Second group")
+                        a.btn.btn-light.btn-sm.px-3(href=`${currentUrl}?page=1${filterString}` class= currentPage===1 ? "disabled" : "")
+                            i.fa.fa-chevron-left
+
+                        if totalPages > 6 && rangeStart() > 1
+                            a.btn.btn-light.btn-sm.px-3(href= `${currentUrl}?page=1${filterString}`) 1
+                            a.btn.btn-light.btn-sm.px-3(href="#" disabled=true) ...
+
+                        if totalPages <= 6
+                            -for(let index = 1; index <= totalPages; index +=1)
+                                a.btn.btn-light.btn-sm.px-3(href=currentUrl+`?page=${index}${filterString}` class= currentPage===index ? 'active': '')= index
+                        else                        
+                            -for(let index = rangeStart(); index <= rangeEnd(); index +=1)
+                                a.btn.btn-light.btn-sm.px-3(href=currentUrl+`?page=${index}${filterString}` class= currentPage===index ? 'active': '')= index
+                        
+                        if totalPages>6 && hasLast
+                            if rangeEnd() + 1 !== totalPages
+                                a.btn.btn-light.btn-sm.px-3(href="#" disabled=true) ...
+                            
+                            a.btn.btn-light.btn-sm.px-3(href=currentUrl+`?page=${totalPages}${filterString}`)= totalPages
+
+                        a.btn.btn-light.btn-sm.px-3(href=currentUrl+`?page=${totalPages}${filterString}` class= currentPage===totalPages ? "disabled" : "")
+                            i.fa.fa-chevron-right
+
+                    .btn-group.mr-2(role="group" aria-label="Third group")
+                        a.btn.btn-light.btn-sm.px-3(href=currentUrl+`?page=${totalPages}${filterString}` class= currentPage===totalPages ? "disabled" : "")
+                            | Last
+                            i.fa.fa-angle-double-right.ml-3
+
+    //- FOR MOBILE PAGINATIONS
+    .row.row_fixed.d-md-none.d-lg-none
+        .col-12
+            - pageRange = 2;
+            //- totalPages = 1;
+            - rangeStart = () => (currentPage - pageRange > 1) ? currentPage - pageRange : 1;
+            - rangeEnd = () => (currentPage + pageRange < totalPages) ? currentPage + pageRange : totalPages;
+            - hasFirst = rangeStart !== 1;
+            - hasLast = rangeEnd() < totalPages;
+
+            if totalPages > 1
+                .btn-toolbar.pull-right(role="toolbar" aria-label="Toolbar with button groups")
+                    
+                    .btn-group(role="group" aria-label="Second group")
+                        a.btn.btn-light.btn-sm.px-3(href=`${currentUrl}?page=1${filterString}` class= currentPage===1 ? "disabled" : "")
+                            i.fa.fa-chevron-left
+
+                        if totalPages > 6 && rangeStart() > 1
+                            a.btn.btn-light.btn-sm.px-3(href= `${currentUrl}?page=1${filterString}`) 1
+                            a.btn.btn-light.btn-sm.px-3(href="#" disabled=true) ...
+
+                        if totalPages <= 6
+                            -for(let index = 1; index <= totalPages; index +=1)
+                                a.btn.btn-light.btn-sm.px-3(href=currentUrl+`?page=${index}${filterString}` class= currentPage===index ? 'active': '')= index
+                        else                        
+                            -for(let index = rangeStart(); index <= rangeEnd(); index +=1)
+                                a.btn.btn-light.btn-sm.px-3(href=currentUrl+`?page=${index}${filterString}` class= currentPage===index ? 'active': '')= index
+                        
+                        if totalPages>6 && hasLast
+                            if rangeEnd() + 1 !== totalPages
+                                a.btn.btn-light.btn-sm.px-3(href="#" disabled=true) ...
+                            
+                            a.btn.btn-light.btn-sm.px-3(href=currentUrl+`?page=${totalPages}${filterString}`)= totalPages
+
+                        a.btn.btn-light.btn-sm.px-3(href=currentUrl+`?page=${totalPages}${filterString}` class= currentPage===totalPages ? "disabled" : "")
+                            i.fa.fa-chevron-right
