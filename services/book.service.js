@@ -63,7 +63,7 @@ BookService.prototype = {
             };
 
             try {
-                if ((!comfun.isEmptyString(query.category_id) && !comfun.isEmptyArray(bookIdsFilter)) || (!comfun.isEmptyString(query.id) && comfun.isEmptyString(query.category_id)))
+                if ((!comfun.isEmptyString(query.category_id) && !comfun.isEmptyArray(bookIdsFilter)) || !comfun.isEmptyString(query.id) || comfun.isEmptyString(query.category_id))
                 {
                     let bookPaging = await db.Book.paginate(bookOption, pageOption),
                         rawBooks = bookPaging.docs,
