@@ -6,7 +6,7 @@ Library System With Online Public Access Catalog written in in Node/Express.
 
 This web application creates an online catalog for a small local library, where admin can manage authors, categories, books and students information.And also admin will need authenticated to use above accesses.
 
-![A diagram showing the relation of database entities in this example repository](https://raw.githubusercontent.com/mdn/library-opac/main/public/images/LibrarySystemERD.png)
+![A diagram showing the relation of database entities in this example repository](https://raw.githubusercontent.com/sawronyhlakhine/library-opac/main/public/images/LibrarySystemERD.png)
 
 You can view published database diagram [here(dbdiagram.io)](https://dbdocs.io/sawronyhlakhine/Library-System-With-OPAC) with password  ```RHe7gxQFt84NpBzA```.
 
